@@ -461,6 +461,18 @@ class Question
 {
 }
 ```
+This annotation also allows you to add an access control on each path with the directive `access_control `. 
+
+```php
+@ApiResource(
+ *     subresourceOperations={
+ *          "answer_get_subresource"= {
+ *              "method"="GET",
+ *              "access_control"="has_role('ROLE_AUTHENTICATED')"
+ *          }
+ *      }
+ * )
+```
 
 ### Control the Depth of Subresources
 
